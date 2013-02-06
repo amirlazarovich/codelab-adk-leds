@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <usb-accessory manufacturer="Reversim Summit 2013"
+                   model="leds-dashboard"
+                   version="1.0"/>
+</resources>
