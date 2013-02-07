@@ -1,6 +1,5 @@
-#include <Max3421e.h>
-#include <Usb.h>
-#include <AndroidAccessory.h>
+#include "Arduino.h"
+#include <ADK.h>
 
 //////////////////////////////////////////
 ////// Constants
@@ -17,8 +16,6 @@
 #define PIN_LED_GREEN          6
 #define PIN_LED_YELLOW         7
 
-#define TIME_STEP_BETWEEN_USB_RECONNECTIONS 1000 // in milliseconds
-
 const char *USB_MANUFACTURER = "Reversim Summit 2013";
 const char *USB_MODEL        = "leds-dashboard";
 const char *USB_DESCRIPTION  = "Code lab - android-adk basics";
@@ -30,10 +27,7 @@ const char *USB_SERIAL       = "0000000012345678";
 ////// Members
 //////////////////////////////////////////
 // command (1 byte), action (1 byte), data-length (1 byte), data (X bytes) 
-AndroidAccessory *_acc;
-
-// members-states
-long _lastTimeReconnectedToUsb;
+ADK L;
 
 //////////////////////////////////////////
 ////// Initialization
@@ -154,21 +148,26 @@ void onChangeLedState(byte action, int ledState) {
 //////////////////////////////////////////
 ////// Android communication boilerplate 
 //////////////////////////////////////////
+void adkPutchar(char c){Serial.write(c);}
+extern "C" void dbgPrintf(const char *, ... );
+
 
 /**
  * Called once when the arduino first loads (or resets)
  */
 void setup(){
   Serial.begin(9600);
-  _acc = new AndroidAccessory(USB_MANUFACTURER,
-                              USB_MODEL,
-                              USB_DESCRIPTION,
-                              USB_VERSION,
-                              USB_SITE,
-                              USB_SERIAL);
-  _acc->powerOn();
-  _lastTimeReconnectedToUsb = 0;
+  L.adkSetPutchar(adkPutchar);
+  L.adkInit();
   
+  L.usbSetAccessoryStringVendor(USB_MANUFACTURER);
+  L.usbSetAccessoryStringName(USB_MODEL);
+  L.usbSetAccessoryStringLongname(USB_DESCRIPTION);
+  L.usbSetAccessoryStringVersion(USB_VERSION);
+  L.usbSetAccessoryStringUrl(USB_SITE);
+  L.usbSetAccessoryStringSerial(USB_SERIAL);
+
+  L.usbStart();
   onCreate();
 }
 
@@ -177,11 +176,11 @@ void setup(){
  * Arduino calls this method in an infinite loop after returning from method "setup"
  */
 void loop() {  
-  if (_acc->isConnected()) {
+  if (L.accessoryConnected()) {
     Serial.println("reading...");
    
     byte msg[BUFFER_SIZE];
-    int len = _acc->read(msg, BUFFER_SIZE);
+    int len = L.accessoryReceive(msg, BUFFER_SIZE);
     if (len > 0) {
       Serial.print("read: ");
       Serial.print(len, DEC);
@@ -190,13 +189,10 @@ void loop() {
       handleMsgFromDevice(msg);
       sendAck();
     }
-  } else if (_lastTimeReconnectedToUsb + TIME_STEP_BETWEEN_USB_RECONNECTIONS < millis()) {
-    Serial.println("USB is not connected. Trying to reconnect...");
-    reconnectUsb();
-    _lastTimeReconnectedToUsb = millis();
-  }
+  } 
   
   onLoop();
+  L.adkEventProcess(); //let the adk framework do its thing
 }
 
 /**
@@ -212,27 +208,12 @@ void handleMsgFromDevice(byte* msg) {
 }
 
 /**
- * Try to reconnect to the Android device
- */
-void reconnectUsb() {
-  delete _acc;
-  _acc = new AndroidAccessory(USB_MANUFACTURER,
-                              USB_MODEL,
-                              USB_DESCRIPTION,
-                              USB_VERSION,
-                              USB_SITE,
-                              USB_SERIAL);
-  _acc->powerOn();
-}    
-
-/**
  * Send acknowledge to connected Android device
  */ 
 void sendAck() {
-  if (_acc->isConnected()) 
-  {
+  if (L.accessoryConnected()) {
     byte msg[1];
     msg[0] = 1;
-    _acc->write(msg, 1);
+    L.accessorySend(msg, 1);
   }  
 }
