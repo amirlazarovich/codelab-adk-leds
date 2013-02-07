@@ -1,0 +1,1 @@
+Copy these libraries to <code>[arduino\_installation\_root]/libraries/</code>

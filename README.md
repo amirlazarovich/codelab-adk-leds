@@ -16,7 +16,7 @@ Android developers interested in crossing the boundaries of virtual software dev
  - [Android SDK (including Platform 2.3.3, API Level 10 or higher)](http://developer.android.com/sdk/index.html)
  - [Arduino IDE for ADK 2011](http://arduino.cc/en/Main/Software)
  - [Arduino IDE for ADK 2012](http://developer.android.com/tools/adk/adk2.html#dev-setup)
- - [Arduino libs](https://github.com/amirlazarovich/codelab-adk-leds/tree/master/Arduino/libs) - copy these libraries to <arduino_installation_root>/libraries/
+ - [Arduino libs](https://github.com/amirlazarovich/codelab-adk-leds/tree/master/Arduino/libs) - Copy these libraries to <code>[arduino\_installation\_root]/libraries/</code>
  - [Eclipse](http://eclipse.org/mobile/) + [Android plugin](http://developer.android.com/sdk/installing/installing-adt.html)/[Intellij](http://www.jetbrains.com/idea/download/)/etc.
 
 ### References
