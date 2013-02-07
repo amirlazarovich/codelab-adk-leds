@@ -14,7 +14,9 @@ Android developers interested in crossing the boundaries of virtual software dev
 2. USB cable
 3. Laptop with:
  - [Android SDK (including Platform 2.3.3, API Level 10 or higher)](http://developer.android.com/sdk/index.html)
- - [Arduino IDE & libs (including the Servo library) - follow the entire instructions](http://developer.android.com/tools/adk/adk.html#getting-started)
+ - [Arduino IDE for ADK 2011](http://arduino.cc/en/Main/Software)
+ - [Arduino IDE for ADK 2012](http://developer.android.com/tools/adk/adk2.html#dev-setup)
+ - [Arduino libs](https://github.com/amirlazarovich/codelab-adk-leds/tree/master/Arduino/libs) - copy these libraries to <arduino_installation_root>/libraries/
  - [Eclipse](http://eclipse.org/mobile/) + [Android plugin](http://developer.android.com/sdk/installing/installing-adt.html)/[Intellij](http://www.jetbrains.com/idea/download/)/etc.
 
 ### References
