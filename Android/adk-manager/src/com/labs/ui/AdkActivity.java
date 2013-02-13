@@ -34,13 +34,17 @@ public abstract class AdkActivity extends Activity implements Callback {
     @Override
     public void onResume() {
         super.onResume();
-        mADKManager.connect();
+        if (!mADKManager.isConnected()) {
+            mADKManager.connect();
+        }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        mADKManager.disconnect();
+        if (mADKManager.isConnected()) {
+            mADKManager.disconnect();
+        }
     }
 
     ///////////////////////////////////////////////
@@ -68,11 +72,30 @@ public abstract class AdkActivity extends Activity implements Callback {
 
     }
 
-    ///////////////////////////////////////////////
-    // Protected
-    ///////////////////////////////////////////////
+    /**
+     * Check if connected to the ADK device
+     *
+     * @return
+     */
+    protected boolean isConnected() {
+        return mADKManager.isConnected();
+    }
+
+    //////////////////////////////////////////
+    // Overrides & Implementations
+    //////////////////////////////////////////
     @Override
     public void onAckReceived(boolean ack) {
+
+    }
+
+    @Override
+    public void onConnected() {
+
+    }
+
+    @Override
+    public void onDisconnected() {
 
     }
 }

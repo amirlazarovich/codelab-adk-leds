@@ -23,27 +23,42 @@
       </GlobalState>
     </option>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" name="Default" comment="" />
+    <list default="true" id="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blinking-lights/res/drawable/icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blinking-lights/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blinking-lights/src/com/labs/reversim/blink/BlinkLedActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blinking-lights/src/com/labs/reversim/blink/Commands.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blinking-lights/res/xml/accessory_filter.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blinking-lights/build.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blinking-lights/res/layout/main.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blinking-lights/project.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/blinking-lights/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adk-manager/src/com/labs/adk/ADKManager.java" afterPath="$PROJECT_DIR$/adk-manager/src/com/labs/adk/ADKManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adk-manager/src/com/labs/ui/AdkActivity.java" afterPath="$PROJECT_DIR$/adk-manager/src/com/labs/ui/AdkActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adk-manager/src/com/labs/adk/Callback.java" afterPath="$PROJECT_DIR$/adk-manager/src/com/labs/adk/Callback.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Android.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360180309831" ignored="false" />
+    <file path="/Dummy.txt" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360785667550" ignored="false" />
     <file path="$PROJECT_DIR$/../../helidroid/resources/android/adk-manager/gen/com/labs/adk/BuildConfig.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360130595244" ignored="false" />
     <file path="/accessory_filter.xml" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360179199787" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360179148475" ignored="false" />
-    <file path="/MainActivity.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360183062621" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360650488981" ignored="false" />
+    <file path="/MainActivity.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360707286894" ignored="false" />
     <file path="/strings.xml" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360181132926" ignored="false" />
-    <file path="/AdkActivity.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360182214434" ignored="false" />
-    <file path="/Callback.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360179939181" ignored="false" />
-    <file path="/main.xml" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360183523738" ignored="false" />
+    <file path="/AdkActivity.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360711567605" ignored="false" />
+    <file path="/Callback.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360709070885" ignored="false" />
+    <file path="/main.xml" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360707497294" ignored="false" />
     <file path="/dots.xml" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360181503908" ignored="false" />
     <file path="/Commands.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360183040706" ignored="false" />
-    <file path="/fragment.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360183114707" ignored="false" />
+    <file path="/fragment.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360650854049" ignored="false" />
     <file path="/themes.xml" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360183443121" ignored="false" />
-    <file path="/ADKManager.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360184587195" ignored="false" />
+    <file path="/ADKManager.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360711060115" ignored="false" />
+    <file path="/BlinkLedActivity.java" changelist="8a6deb30-bb0b-4632-aac7-17ba0ba93d31" time="1360709179655" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +73,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -93,6 +107,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -102,53 +117,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="accessory_filter.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/res/xml/accessory_filter.xml">
+      <file leaf-file-name="BlinkLedActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/blinking-lights/src/com/labs/reversim/blink/BlinkLedActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="40" selection-start="133" selection-end="147" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dashboard/src/com/labs/reversim/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="32" selection-start="1930" selection-end="1930" vertical-scroll-proportion="0.4326484">
+            <state line="38" column="31" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.7357631">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ADKManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adk-manager/src/com/labs/adk/ADKManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="169" column="57" selection-start="5158" selection-end="5158" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Commands.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/src/com/labs/reversim/Commands.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="41" selection-start="136" selection-end="148" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard/res/layout/main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="2051" selection-end="2051" vertical-scroll-proportion="-8.777778">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -170,21 +146,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/../../helidroid/resources/android/adk-manager/src/com/labs/adk/ADKManager.java" />
-        <option value="$PROJECT_DIR$/adk-manager/src/com/labs/commons/SLog.java" />
-        <option value="$PROJECT_DIR$/dashboard/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/dashboard/res/xml/accessory_filter.xml" />
-        <option value="$PROJECT_DIR$/adk-manager/src/com/labs/adk/Callback.java" />
         <option value="$PROJECT_DIR$/dashboard/res/drawable/dots.xml" />
         <option value="$PROJECT_DIR$/dashboard/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/adk-manager/src/com/labs/ui/AdkActivity.java" />
         <option value="$PROJECT_DIR$/dashboard/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/dashboard/src/com/labs/reversim/Commands.java" />
         <option value="$PROJECT_DIR$/dashboard/res/values/themes.xml" />
         <option value="$PROJECT_DIR$/dashboard/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/dashboard/src/com/labs/reversim/MainActivity.java" />
         <option value="$PROJECT_DIR$/adk-manager/proguard-project.txt" />
+        <option value="$PROJECT_DIR$/blinking-lights/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/blinking-lights/src/com/labs/reversim/blink/Commands.java" />
+        <option value="$PROJECT_DIR$/blinking-lights/src/com/labs/reversim/blink/MainActivity.java" />
+        <option value="$PROJECT_DIR$/blinking-lights/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/adk-manager/src/com/labs/adk/Callback.java" />
         <option value="$PROJECT_DIR$/adk-manager/src/com/labs/adk/ADKManager.java" />
+        <option value="$PROJECT_DIR$/adk-manager/src/com/labs/ui/AdkActivity.java" />
+        <option value="$PROJECT_DIR$/blinking-lights/src/com/labs/reversim/blink/BlinkLedActivity.java" />
       </list>
     </option>
   </component>
@@ -228,6 +205,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -243,25 +230,30 @@
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/adk-manager/adk-manager.iml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.18997669" />
     <property name="DEBUGGABLE_DEVICE" value="014E28A21601901B" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="DEBUGGABLE_PROCESS" value="com.labs.reversim" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.labs.reversim.blink" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/blinking-lights/res" />
       <recent name="$PROJECT_DIR$/dashboard/res" />
       <recent name="$PROJECT_DIR$/adk-manager/src/com/labs/commons" />
     </key>
   </component>
-  <component name="RunManager" selected="Android Application.dashboard">
+  <component name="RunManager" selected="Android Application.blinking-lights">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -399,8 +391,26 @@
       <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
       <method />
     </configuration>
-    <list size="1">
+    <configuration default="false" name="blinking-lights" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="blinking-lights" />
+      <option name="ACTIVITY_CLASS" value="com.labs.reversim.blink.BlinkLedActivity" />
+      <option name="MODE" value="specific_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="USB_DEVICE" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <RunnerSettings RunnerId="AndroidDebugRunner" />
+      <ConfigurationWrapper RunnerId="AndroidDebugRunner" />
+      <method />
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Android Application.dashboard" />
+      <item index="1" class="java.lang.String" itemvalue="Android Application.blinking-lights" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -435,33 +445,33 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="1024" extended-state="6" />
+    <frame x="0" y="22" width="1680" height="1024" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933628" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5165929" sideWeight="0.500612" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26490065" sideWeight="0.51040393" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.249694" sideWeight="0.48340708" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32964602" sideWeight="0.49510404" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14687882" sideWeight="0.7345133" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26548672" sideWeight="0.4853121" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -524,71 +534,36 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../helidroid/resources/android/adk-manager/src/com/labs/adk/ADKManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="24" selection-start="2566" selection-end="2566" vertical-scroll-proportion="0.33333334">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adk-manager/src/com/labs/commons/SLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="32" selection-start="702" selection-end="702" vertical-scroll-proportion="0.3939745">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="32" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0">
+        <state line="34" column="18" selection-start="152" selection-end="1242" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adk-manager/src/com/labs/adk/Callback.java">
+    <entry file="file://$PROJECT_DIR$/blinking-lights/res/xml/accessory_filter.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="209" selection-end="209" vertical-scroll-proportion="0.15525115">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adk-manager/src/com/labs/ui/AdkActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="20" selection-start="1423" selection-end="1423" vertical-scroll-proportion="0.7089041">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="149" selection-start="563" selection-end="563" vertical-scroll-proportion="0.11819235">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="22" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Programming/SDKs/android-sdk-mac_86/sources/android-16/android/widget/Switch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="19" selection-start="2346" selection-end="2352" vertical-scroll-proportion="0.3529412">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/res/layout/main.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="2051" selection-end="2051" vertical-scroll-proportion="-8.777778">
+        <state line="59" column="0" selection-start="2051" selection-end="2051" vertical-scroll-proportion="0.0" />
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard/src/com/labs/reversim/Commands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="41" selection-start="136" selection-end="148" vertical-scroll-proportion="0.13553531">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blinking-lights/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="42" selection-start="277" selection-end="277" vertical-scroll-proportion="0.11985899">
           <folding />
         </state>
       </provider>
@@ -596,44 +571,79 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/res/xml/accessory_filter.xml">
+    <entry file="file://$PROJECT_DIR$/adk-manager/src/com/labs/adk/Callback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="40" selection-start="133" selection-end="147" vertical-scroll-proportion="0.0">
+        <state line="19" column="59" selection-start="438" selection-end="438" vertical-scroll-proportion="0.36872146">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../zepdroid-git/ZepDroid/src/com/geeckon/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/blinking-lights/src/com/labs/reversim/blink/Commands.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="0" selection-start="6882" selection-end="6968" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adk-manager/proguard-project.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="30" selection-start="781" selection-end="781" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard/src/com/labs/reversim/Commands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="41" selection-start="136" selection-end="148" vertical-scroll-proportion="0.0">
+        <state line="12" column="15" selection-start="244" selection-end="244" vertical-scroll-proportion="0.23234624">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/adk-manager/src/com/labs/adk/ADKManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="57" selection-start="5158" selection-end="5158" vertical-scroll-proportion="0.0">
+        <state line="85" column="35" selection-start="2690" selection-end="2690" vertical-scroll-proportion="1.2381502">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adk-manager/src/com/labs/ui/AdkActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="16" selection-start="16" selection-end="16" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blinking-lights/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="28" selection-start="550" selection-end="550" vertical-scroll-proportion="0.309795">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard/src/com/labs/reversim/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="32" selection-start="1930" selection-end="1930" vertical-scroll-proportion="0.4326484">
+        <state line="77" column="22" selection-start="2671" selection-end="2671" vertical-scroll-proportion="0.47722095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blinking-lights/project.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blinking-lights/blinking-lights.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blinking-lights/local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blinking-lights/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blinking-lights/src/com/labs/reversim/blink/BlinkLedActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="31" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.7357631">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

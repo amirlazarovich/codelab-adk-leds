@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/adk-manager/adk-manager.iml" filepath="$PROJECT_DIR$/adk-manager/adk-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/blinking-lights/blinking-lights.iml" filepath="$PROJECT_DIR$/blinking-lights/blinking-lights.iml" />
       <module fileurl="file://$PROJECT_DIR$/dashboard/dashboard.iml" filepath="$PROJECT_DIR$/dashboard/dashboard.iml" />
     </modules>
   </component>

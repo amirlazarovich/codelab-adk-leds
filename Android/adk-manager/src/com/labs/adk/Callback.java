@@ -10,4 +10,14 @@ public interface Callback {
      * @param ack
      */
     void onAckReceived(boolean ack);
+
+    /**
+     * Callback invoked when the ADK device is connected
+     */
+    void onConnected();
+
+    /**
+     * Callback invoked when the ADK device is disconnected
+     */
+    void onDisconnected();
 }

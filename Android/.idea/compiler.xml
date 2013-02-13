@@ -7,6 +7,7 @@
       <directory url="file://$PROJECT_DIR$/../../helidroid/resources/android/adk-manager/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/adk-manager/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/dashboard/gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/blinking-lights/gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>

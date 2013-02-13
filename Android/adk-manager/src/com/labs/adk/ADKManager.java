@@ -83,6 +83,7 @@ public class ADKManager implements Runnable {
                 synchronized (mLock) {
                     if (!mConnected) {
                         SLog.d(TAG, "Connecting to ADK...");
+                        disconnectInternal();
                         connectInternal();
                     } else {
                         mTimer.cancel();
@@ -92,7 +93,7 @@ public class ADKManager implements Runnable {
         };
 
         try {
-            mTimer.schedule(reconnectTask, 0, 5000);
+            mTimer.schedule(reconnectTask, 0, 10000);
         } catch (IllegalStateException e) {
             SLog.e(TAG, "Can't schedule a task on a canceled timer", e);
         }
@@ -102,8 +103,137 @@ public class ADKManager implements Runnable {
      * Disconnect from the ADK
      */
     public void disconnect() {
+        SLog.d(TAG, "Disconnecting from the ADK device");
+        disconnectInternal();
+        mCallback.onDisconnected();
+    }
+
+    /**
+     * Send command to the ADK
+     *
+     * @param command
+     * @param action
+     * @param data    May also be null if there's no data (if you read this, you rock!)
+     */
+    public void sendCommand(final byte command, final byte action, final byte[] data) {
+        mPool.execute(new Runnable() {
+            @Override
+            public void run() {
+                int dataLength = ((data != null) ? data.length : 0);
+
+                ByteBuffer buffer = ByteBuffer.allocate(3 + dataLength);
+                buffer.put(command);
+                buffer.put(action);
+                buffer.put(toUnsignedByte(dataLength));
+                if (data != null) {
+                    buffer.put(data);
+                }
+
+                if (mOutputStream != null) {
+                    try {
+                        SLog.d(TAG, "sendCommand: Sending data to ADK device: " + buffer);
+                        mOutputStream.write(buffer.array());
+                    } catch (IOException e) {
+                        SLog.e(TAG, e, "sendCommand: Failed to send command to ADK device");
+                        reconnect();
+                    }
+                } else {
+                    SLog.d(TAG, "sendCommand: Send failed: mOutStream was null");
+                    reconnect();
+                }
+            }
+        });
+    }
+
+    /**
+     * Convert <code>integer</code> to unsigned byte
+     *
+     * @param integer
+     * @return
+     */
+    public static byte toUnsignedByte(int integer) {
+        return (byte) (integer & 0xFF);
+    }
+
+    /**
+     * Check if connected to the ADK device
+     *
+     * @return
+     */
+    public boolean isConnected() {
+        return mConnected;
+    }
+
+    ///////////////////////////////////////////////
+    // Overrides & Implementations
+    ///////////////////////////////////////////////
+
+    /**
+     * The running thread. It takes care of the communication between the Android and the ADK
+     */
+    @Override
+    public void run() {
+        int ret;
+        byte[] buffer = new byte[16384];
+
+        // Keeps reading messages forever.
+        // There are probably a lot of messages in the buffer, each message 4 bytes.
+        while (true) {
+            try {
+                ret = mInputStream.read(buffer);
+                if (ret > 0) {
+                    final boolean ack = buffer[0] == 1;
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mCallback.onAckReceived(ack);
+                        }
+                    });
+                }
+            } catch (Exception e) {
+                break;
+            }
+
+        }
+    }
+
+    ///////////////////////////////////////////////
+    // Private
+    ///////////////////////////////////////////////
+    /**
+     * Connect to the ADK device
+     */
+    void connectInternal() {
         synchronized (mLock) {
-            SLog.d(TAG, "Disconnecting from the ADK device");
+            mUsbManager = UsbManager.getInstance(mContext);
+            PendingIntent permissionIntent = PendingIntent.getBroadcast(mContext, 0, new Intent(ACTION_USB_PERMISSION), 0);
+
+            // register receiver
+            IntentFilter filter = new IntentFilter(ACTION_USB_PERMISSION);
+            filter.addAction(UsbManager.ACTION_USB_ACCESSORY_DETACHED);
+            filter.addAction(UsbManager.ACTION_USB_ACCESSORY_ATTACHED);
+            mUsbReceiver = new UsbReceiver();
+            mContext.registerReceiver(mUsbReceiver, filter);
+
+            // assume the only connected usb device is our ADK
+            UsbAccessory[] accessories = mUsbManager.getAccessoryList();
+            UsbAccessory accessory = (accessories == null) ? null : accessories[0];
+
+            if (accessory != null) {
+                if (mUsbManager.hasPermission(accessory)) {
+                    openAccessory(accessory);
+                } else {
+                    mUsbManager.requestPermission(accessory, permissionIntent);
+                }
+            }
+        }
+    }
+
+    /**
+     * Disconnect from the ADK device
+     */
+    private void disconnectInternal() {
+        synchronized (mLock) {
             mConnected = false;
             if (mTimer != null) {
                 mTimer.cancel();
@@ -155,75 +285,6 @@ public class ADKManager implements Runnable {
     }
 
     /**
-     * Send command to the ADK
-     *
-     * @param command
-     * @param action
-     * @param data    May also be null if there's no data (if you read this, you rock!)
-     */
-    public void sendCommand(final byte command, final byte action, final byte[] data) {
-        mPool.execute(new Runnable() {
-            @Override
-            public void run() {
-                int dataLength = ((data != null) ? data.length : 0);
-
-                ByteBuffer buffer = ByteBuffer.allocate(3 + dataLength);
-                buffer.put(command);
-                buffer.put(action);
-                buffer.put(toUnsignedByte(dataLength));
-                if (data != null) {
-                    buffer.put(data);
-                }
-
-                if (mOutputStream != null) {
-                    try {
-                        SLog.d(TAG, "sendCommand: Sending data to ADK device: " + buffer);
-                        mOutputStream.write(buffer.array());
-                    } catch (IOException e) {
-                        SLog.e(TAG, e, "sendCommand: Failed to send command to ADK device");
-                        reconnect();
-                    }
-                } else {
-                    SLog.d(TAG, "sendCommand: Send failed: mOutStream was null");
-                    reconnect();
-                }
-            }
-        });
-    }
-
-    ///////////////////////////////////////////////
-    // Private
-    ///////////////////////////////////////////////
-    /**
-     * Connect to the ADK device
-     */
-    void connectInternal() {
-        synchronized (mLock) {
-            mUsbManager = UsbManager.getInstance(mContext);
-            PendingIntent permissionIntent = PendingIntent.getBroadcast(mContext, 0, new Intent(ACTION_USB_PERMISSION), 0);
-
-            // register receiver
-            IntentFilter filter = new IntentFilter(ACTION_USB_PERMISSION);
-            filter.addAction(UsbManager.ACTION_USB_ACCESSORY_DETACHED);
-            filter.addAction(UsbManager.ACTION_USB_ACCESSORY_ATTACHED);
-            mUsbReceiver = new UsbReceiver();
-            mContext.registerReceiver(mUsbReceiver, filter);
-
-            // assume the only connected usb device is our ADK
-            UsbAccessory[] accessories = mUsbManager.getAccessoryList();
-            UsbAccessory accessory = (accessories == null) ? null : accessories[0];
-
-            if (accessory != null) {
-                if (mUsbManager.hasPermission(accessory)) {
-                    openAccessory(accessory);
-                } else {
-                    mUsbManager.requestPermission(accessory, permissionIntent);
-                }
-            }
-        }
-    }
-
-    /**
      * Try to reconnected
      */
     void reconnect() {
@@ -231,43 +292,6 @@ public class ADKManager implements Runnable {
         disconnect();
         connect();
     }
-
-    ///////////////////////////////////////////////
-    // Overrides & Implementations
-    ///////////////////////////////////////////////
-
-    /**
-     * The running thread. It takes care of the communication between the Android and the ADK
-     */
-    @Override
-    public void run() {
-        int ret;
-        byte[] buffer = new byte[16384];
-
-        // Keeps reading messages forever.
-        // There are probably a lot of messages in the buffer, each message 4 bytes.
-        while (true) {
-            try {
-                ret = mInputStream.read(buffer);
-                if (ret > 0) {
-                    final boolean ack = buffer[0] == 1;
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mCallback.onAckReceived(ack);
-                        }
-                    });
-                }
-            } catch (Exception e) {
-                break;
-            }
-
-        }
-    }
-
-    ///////////////////////////////////////////////
-    // Private
-    ///////////////////////////////////////////////
 
     /**
      * Open read and write to and from the ADK device
@@ -291,6 +315,7 @@ public class ADKManager implements Runnable {
                 mCommunicationThread = new Thread(null, this, TAG);
                 mCommunicationThread.start();
                 mConnected = true;
+                mCallback.onConnected();
                 SLog.d(TAG, "Attached");
             } else {
                 SLog.d(TAG, "openAccessory: accessory open failed");
@@ -305,16 +330,6 @@ public class ADKManager implements Runnable {
      */
     private void runOnUiThread(Runnable runnable) {
         mHandler.post(runnable);
-    }
-
-    /**
-     * Convert <code>integer</code> to unsigned byte
-     *
-     * @param integer
-     * @return
-     */
-    public static byte toUnsignedByte(int integer) {
-        return (byte) (integer & 0xFF);
     }
 
     ///////////////////////////////////////////////
