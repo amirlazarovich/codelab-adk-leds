@@ -5,8 +5,6 @@
 //////////////////////////////////////////
 ////// Constants
 //////////////////////////////////////////
-#define BUFFER_SIZE            16
-
 #define COMMAND_LEDS           1
 
 #define ACTION_LED_RED         1
@@ -16,24 +14,6 @@
 #define PIN_LED_RED            5
 #define PIN_LED_GREEN          6
 #define PIN_LED_YELLOW         7
-
-#define TIME_STEP_BETWEEN_USB_RECONNECTIONS 1000 // in milliseconds
-
-const char *USB_MANUFACTURER = "Reversim Summit 2013";
-const char *USB_MODEL        = "leds-dashboard";
-const char *USB_DESCRIPTION  = "Code lab - android-adk basics";
-const char *USB_VERSION      = "1.0";
-const char *USB_SITE         = "http://summit2013.reversim.com";
-const char *USB_SERIAL       = "0000000012345678";
-                    
-//////////////////////////////////////////
-////// Members
-//////////////////////////////////////////
-// command (1 byte), action (1 byte), data-length (1 byte), data (X bytes) 
-AndroidAccessory *_acc;
-
-// members-states
-long _lastTimeReconnectedToUsb;
 
 //////////////////////////////////////////
 ////// Initialization
@@ -47,19 +27,6 @@ void onCreate() {
   pinMode(PIN_LED_RED, OUTPUT);
   pinMode(PIN_LED_GREEN, OUTPUT);
   pinMode(PIN_LED_YELLOW, OUTPUT); 
-}
-
-
-//////////////////////////////////////////
-////// Main loop
-//////////////////////////////////////////
-
-/**
- * Main loop. 
- * This method is called very frequently in an infinite loop
- */
-void onLoop() {
-  // do nothing...
 }
 
 //////////////////////////////////////////
@@ -76,15 +43,8 @@ void onLoop() {
  */
 void onMessageReceived(byte command, byte action, byte dataLength, byte* data) {
   switch(command) {
-    case COMMAND_LEDS:
-      int ledState;
-      if (data[0] == 1) {
-        ledState = HIGH;
-      } else {
-        ledState = LOW;
-      }
-      
-      onChangeLedState(action, ledState);      
+    case COMMAND_LEDS:      
+      onChangeLedState(action, data[0]);      
       break;
       
     default:
@@ -95,7 +55,7 @@ void onMessageReceived(byte command, byte action, byte dataLength, byte* data) {
 
 
 /**
- * Change led on-state according to given "ledState"
+ * Change led on/off state according to given "ledState"
  * 
  * @param action
  * @param ledState
@@ -119,6 +79,20 @@ void onChangeLedState(byte action, int ledState) {
      Serial.println(action, DEC);
   }  
 }
+
+
+//////////////////////////////////////////
+////// Main loop
+//////////////////////////////////////////
+
+/**
+ * Main loop. 
+ * This method is called very frequently in an infinite loop
+ */
+void onLoop() {
+  // do nothing...
+}
+
 
 
 
@@ -154,6 +128,24 @@ void onChangeLedState(byte action, int ledState) {
 //////////////////////////////////////////
 ////// Android communication boilerplate 
 //////////////////////////////////////////
+#define BUFFER_SIZE            16
+#define TIME_STEP_BETWEEN_USB_RECONNECTIONS 1000 // in milliseconds
+
+const char *USB_MANUFACTURER = "Reversim Summit 2013";
+const char *USB_MODEL        = "leds-dashboard";
+const char *USB_DESCRIPTION  = "Code lab - android-adk basics";
+const char *USB_VERSION      = "1.0";
+const char *USB_SITE         = "http://summit2013.reversim.com";
+const char *USB_SERIAL       = "0000000012345678";
+                    
+                    
+// command (1 byte), action (1 byte), data-length (1 byte), data (X bytes) 
+AndroidAccessory *_acc;
+
+// members-states
+long _lastTimeReconnectedToUsb;
+
+
 
 /**
  * Called once when the arduino first loads (or resets)
@@ -208,6 +200,7 @@ void handleMsgFromDevice(byte* msg) {
   byte command = msg[0];
   byte action = msg[1];
   byte dataLength = msg[2];
+  printValues(command, action, dataLength);
   onMessageReceived(command, action, dataLength, msg + 3); 
 }
 
@@ -235,4 +228,20 @@ void sendAck() {
     msg[0] = 1;
     _acc->write(msg, 1);
   }  
+}
+
+/**
+ * Print the command, action and data length to serial port 
+ *
+ * @param command The command sent by the Android device
+ * @param action The action sent by the Android device
+ * @param dataLength The length of the appended data field
+ */
+void printValues(byte command, byte action, byte dataLength) {
+  Serial.print("Command: ");
+  Serial.print(command, DEC);
+  Serial.print(". Action: ");
+  Serial.print(action, DEC);
+  Serial.print(" Data Length: ");
+  Serial.println(dataLength, DEC);
 }
