@@ -5,14 +5,8 @@
 ////// Constants
 //////////////////////////////////////////
 #define COMMAND_LEDS           1
-
-#define ACTION_LED_RED         1
-#define ACTION_LED_GREEN       2
-#define ACTION_LED_YELLOW      3
-
-#define PIN_LED_RED            5
-#define PIN_LED_GREEN          6
-#define PIN_LED_YELLOW         7
+#define ACTION_LED_13          1
+#define PIN_LED_13             13
 
 //////////////////////////////////////////
 ////// Initialization
@@ -23,9 +17,7 @@
  */
 void onCreate() {
   // initialize leds
-  pinMode(PIN_LED_RED, OUTPUT);
-  pinMode(PIN_LED_GREEN, OUTPUT);
-  pinMode(PIN_LED_YELLOW, OUTPUT); 
+  pinMode(PIN_LED_13, OUTPUT);
 }
 
 //////////////////////////////////////////
@@ -41,42 +33,7 @@ void onCreate() {
  * @param data Pointer to the extra data sent by the device
  */
 void onMessageReceived(byte command, byte action, byte dataLength, byte* data) {
-  switch(command) {
-    case COMMAND_LEDS:
-      onChangeLedState(action, data[0]);      
-      break;
-      
-    default:
-      Serial.print("Unknown command received: ");
-      Serial.println(command, DEC);
-  }
-}
-
-
-/**
- * Change led on-state according to given "ledState"
- * 
- * @param action
- * @param ledState
- */ 
-void onChangeLedState(byte action, int ledState) {
-  switch (action) {
-    case ACTION_LED_RED:
-      digitalWrite(PIN_LED_RED, ledState);
-      break;
-     
-    case ACTION_LED_GREEN:
-      digitalWrite(PIN_LED_GREEN, ledState);          
-      break;
-   
-    case ACTION_LED_YELLOW:
-      digitalWrite(PIN_LED_YELLOW, ledState);
-      break;   
-   
-    default:
-     Serial.print("Unknown led-action received: ");
-     Serial.println(action, DEC);
-  }  
+  digitalWrite(PIN_LED_13, data[0]); 
 }
 
 
