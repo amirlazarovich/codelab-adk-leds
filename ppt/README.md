@@ -1,0 +1,1 @@
+You can also find the presentation on [slideshare](http://www.slideshare.net/amirlazarovich/adk-101)
