@@ -1,10 +1,12 @@
 int minLed = 2;
 int maxLed = 7;
 
-int currentMode = 2;
+int currentMode = 0;
+int maxMode = 3;
 int baseDelay = 250;
 
-void setup() {                
+void setup() {   
+  Serial.begin(115200);  
   for (int i = minLed; i <= maxLed; i++) {
     pinMode(i, OUTPUT);
   }
@@ -69,6 +71,37 @@ void mode_fade() {
   delay(baseDelay / 10);
 }
 
+void joystickControl() {
+  int xVal = analogRead(0);
+  int yVal = analogRead(1);
+
+  if (xVal > 600) {
+    baseDelay -= 50;
+    if (baseDelay < 50) {
+      baseDelay = 50;
+    }
+  }
+  if (xVal < 300) {
+    baseDelay += 50;
+    if (baseDelay > 1000) {
+      baseDelay = 1000;
+    }
+  }
+
+  if (yVal < 300) {
+    currentMode--;
+    if (currentMode < 0) {
+      currentMode =0;
+    }
+  }
+  if (yVal > 600) {
+    currentMode++;
+    if (currentMode > maxMode) {
+      currentMode = maxMode;
+    }
+  }
+}
+
 void loop() {
   switch(currentMode) {
   case 0: 
@@ -83,7 +116,12 @@ void loop() {
   case 3:
     mode_fade();
   }
+
+  joystickControl();
+  Serial.println("Loop");
 }
+
+
 
 
 
